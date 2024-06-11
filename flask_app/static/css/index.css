@@ -91,6 +91,26 @@ img {
 	color: #D43260;
 }
 
+form {
+	margin: 0 auto;
+	max-width: 400px;
+	border: 1px #fff solid;
+}
+
+form div {
+	margin-bottom: 14px;
+}
+
+label {
+	font-size: 1.125rem;
+	margin-bottom: 10px;
+	display: block;
+}
+
+input {
+	text-align: left;
+	color: #fff;
+}
 
 
 
