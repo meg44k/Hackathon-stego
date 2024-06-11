@@ -20,24 +20,37 @@
 </head>
 
 <body>
-	<div id="home" class="big-bg">
+	<div id="login" class="big-bg">
 		<!-- ヘッダー部分 -->
 		<header class="page-header wrapper">
 			<h1><a href="index.html"><img class="logo" src="../images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
 			<nav>
 				<ul class="main-nav">
 					<li><a href="news.html">News</a></li>
-					<li><a href="login.html">Log in</a></li>
+					<li><a href="index.html">戻る</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<!-- メインコンテンツ -->
-		<div class="home-content wrapper">
-			<h2 class="page-title">Easier JA⇔EN Flashcards Creation!</h2>
-			<p>写真を撮るだけで自動的に単語帳ができちゃう！　「WordHolic!」にも対応．</p>
-			<a class="button" href="folder.html">はじめる</a>
-		</div><!-- /.home-content -->
+		<div class="login-content wrapper">
+			<h2 class="page-title">LOG IN</h2>
+			<p>ユーザ名とパスワードを入力してください．</p>
+			<form>
+				<div>
+					<label for="username">ユーザ名</label>
+					<input type="text" id="username" name="username">
+				</div>
+				
+				<div>
+					<label for="password">パスワード</label>
+					<input type="text" id="password" name="password">
+				</div>
+
+				<p><input type="checkbox" id="showpassword" onchange="showOrHide()" class="margin">パスワードを表示する</p>
+			</form>
+			<p>まだ持っていない方はこちら：<a href="signup.html">Sign up</a></p>
+		</div><!-- /.login-content -->
 	</div><!-- /#home -->
 </body>
 </html>
