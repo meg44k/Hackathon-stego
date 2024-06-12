@@ -5,6 +5,13 @@ def create_app():
     app.config.from_pyfile('config.py')
 
     from flask_app.views.index import index_bp
+    from flask_app.views.folder import folder_bp
+    from flask_app.views.login import login_bp
+    from flask_app.views.news import news_bp
 
     app.register_blueprint(index_bp)
+    app.register_blueprint(folder_bp)
+    app.register_blueprint(login_bp)
+    app.register_blueprint(news_bp)
+
     return app
