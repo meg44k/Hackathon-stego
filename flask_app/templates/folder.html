@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="flashcards" content="写真から単語帳を自動作成するアプリ．">
-	<title>単語帳を作る魔法</title>
+	<title>単語帳を作る魔法　-　Folder</title>
 
 	<!-- ファビコン -->
 	<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
@@ -17,10 +17,11 @@
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		<!-- これから指定するCSS -->
 		<link rel="stylesheet" href="../static/css/index.css">
+		<script src="../static/js/index.js" defer></script>
 </head>
 
 <body>
-	<div id="home" class="big-bg">
+	<div id="folder" class="big-bg">
 		<!-- ヘッダー部分 -->
 		<header class="page-header wrapper">
 			<h1><a href="index.html"><img class="logo" src="../images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
@@ -33,11 +34,46 @@
 		</header>
 
 		<!-- メインコンテンツ -->
-		<div class="home-content wrapper">
-			<h2 class="page-title">Easier JA⇔EN Flashcards Creation!</h2>
-			<p>写真を撮るだけで自動的に単語帳ができちゃう！　「WordHolic!」にも対応．</p>
-			<a class="button" href="folder.html">はじめる</a>
-		</div><!-- /.home-content -->
+		<div class="wrapper">
+			<h2 class="page-title">Folder</h2>
+		</div><!-- /.wrapper -->
 	</div><!-- /#home -->
+
+	<main>
+		<div class="folder-edit-belt">
+			<div class="folder-edit-flex wrapper">
+				<p><b class="font-larger">フォルダ</b></p>
+				<ul class="folder-edit">
+					<li><a href="edit.html">編集</a></li>
+					<li><button id="click-btn">新規作成</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--
+			ポップアップ
+		 	https://qiita.com/yuaomo/items/55ec1c3ae15ffb272f9c
+		-->
+		<div id="popup-wrapper">
+			<div id="popup-inside">
+				<div id="close">戻る</div>
+				<div id="message">
+					<h2>新規作成</h2>
+					<div id="newcards">
+						<button id="newcards-button">ここに単語帳を作成する</button>
+						<button id="newcards-button">読み取ったデータをCSVとして出力する<br><span class="newcards-button-text">「WordHolic!」等で使うことができます</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</main>
+
+	<!-- フッター -->
+	<footer>
+		<div class="wrapper">
+			<p><small>&copy; 2024 EYO</small></p>
+		</div>
+	</footer>
 </body>
 </html>

@@ -1,0 +1,428 @@
+@charset "UTF-8";
+
+/* 共通部分------------------------------------------- */
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: "IBM Plex Sans JP", sans-serif;
+	font-weight: normal;
+	line-height: 1.7;
+	color: #fff;
+	background: #142235;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;	/* 画像が親要素より大きくなることを防ぐ */
+}
+
+
+/* HEADER --------------------------------------------- */
+/* ロゴサイズと余白の調整 */
+.logo {
+	width: 210px;
+	margin-top: 30px;
+}
+
+/* ナビゲーションメニューの装飾 */
+.main-nav {
+	display: flex;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	margin-top: 34px;
+	list-style: none;
+}
+
+.main-nav li {
+	margin-left: 36px;
+}
+
+.main-nav a {
+	color: #fff;
+}
+
+.main-nav a:hover {	/* aにカーソルを合わせたときに適用される */
+	color: #D43260;
+}
+
+/* ロゴとナビゲーションメニューを横並び */
+.page-header {
+	display: flex;
+	/* 両端に配置 */
+	justify-content: space-between;
+}
+
+/* コンテンツの最大表示幅を設定 */
+.wrapper {
+	max-width: 1100px;
+	/* ボックスを中央に配置 */
+	margin: 0 auto;
+	/* スマートフォン向け余白の設定 */
+	padding: 0 4%;
+}
+
+
+/* LOG IN --------------------------------------------- */
+.login-content {
+	text-align: center;
+	margin-top: 5%;
+}
+
+.login-content p {
+	font-size: 1.125rem;
+	margin: 30px 0 30px;
+}
+
+#login {
+	background-color: rgb(5, 2, 24);
+	min-height: 100vh;
+}
+
+.login-content a {
+	color: #fff;
+}
+
+.login-content a:hover {
+	color: #D43260;
+}
+
+form {
+	margin: 0 auto;
+	max-width: 400px;
+	border: 1px #fff solid;
+}
+
+form div {
+	margin-bottom: 14px;
+}
+
+label {
+	font-size: 1.125rem;
+	margin-bottom: 10px;
+	display: block;
+}
+
+input {
+	text-align: left;
+	color: #fff;
+}
+
+
+
+/* HOME --------------------------------------------- */
+/* 文章 */
+.home-content {
+	text-align: center;
+	margin-top: 10%;
+}
+
+.home-content p {
+	font-size: 1.125rem;
+	margin: 10px 0 42px;
+}
+
+/* 見出し */
+.page-title {
+	font-size: 5rem;
+	font-family: 'Rubik', serif;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* ボタン */
+.button {
+	font-size: 1.375rem;
+	background: #D43260;
+	color: #fff;
+	border-radius: 5px;	/* 角丸 */
+	padding: 18px 32px;
+}
+
+.button:hover {
+	background: #720d64;
+}
+
+
+/* 大きな背景画像 */
+.big-bg {
+	background-size: cover;
+	background-position: center top;
+}
+
+/* 
+	ID(#)は，レイアウトの枠組みなど，どのページでも変わることのない装飾
+	class(.)は，ページ内で何度も使いたい装飾
+*/
+#home {
+	background-color: rgb(5, 2, 24);
+	min-height: 100vh;
+}
+
+#home .page-title {
+	text-transform: none;
+}
+
+
+
+
+/* FOLDER --------------------------------------------- */
+#folder {
+	background-color: rgb(5, 2, 24);
+	height: 210px;
+	margin-bottom: 0px;
+}
+
+#folder .page-title {
+	text-align: center;
+}
+
+.folder-edit-belt {
+	font-size: 1.65rem;
+	color: #fff;
+	background: #28548d;
+}
+
+.folder-edit-flex {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 4%;
+}
+
+.folder-edit {
+	display: flex;
+	list-style: none;
+	align-items: center;
+}
+
+.folder-edit li {
+	margin-left: 44px;
+	border-radius: 10px;
+}
+
+.folder-edit a, .folder-edit button {
+	color: #fff;
+	padding: 5px 20px;
+	display: block;
+}
+
+.folder-edit li:hover {
+	background-color: rgba(255, 255, 255, .5);
+}
+
+.font-larger {
+	font-size: 2.30rem;
+}
+
+
+/* ポップアップ */
+
+#click-btn {
+	display: block;
+}
+  
+#popup-wrapper {
+	background-color: rgba(0, 0, 0, .8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+  
+#popup-inside {
+	text-align: center;
+	border-radius: 10px;
+	width: 100%;
+	max-width: 1000px;
+	background: #142235;
+	margin: 10% auto;
+	padding: 20px;
+	position: relative;
+}
+
+#message h2 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+
+#newcards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+
+#newcards-button {
+	font-size: 1.5rem;
+	color: #fff;
+	background: #D43260;
+	padding: 20px;
+}
+
+.newcards-button-text {
+	font-size: 0.5rem;
+}
+
+  
+#close {
+	font-size: 1.23rem;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+	padding: 5px 20px;
+	border-radius: 5px;
+}
+
+#close:hover {
+	background-color: rgba(255, 255, 255, .5);
+}
+  
+
+
+
+/* NEWS --------------------------------------------- */
+#news {
+	background-color: rgb(5, 2, 24);
+	height: 210px;
+	margin-bottom: 60px;
+}
+
+#news .page-title {
+	text-align: center;
+}
+
+/* 記事部分 */
+article {
+	width: 74%;
+}
+
+/* サイドバー */
+aside {
+	width: 22%;
+}
+
+.news-contents {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+
+/* 日付の装飾 */
+.post-info {
+	position: relative;
+	padding-top: 4px;
+	margin-bottom: 40px;
+}
+
+.post-date {
+	background: #D43260;
+	border-radius: 50%;
+	color: #fff;
+	width: 100px;
+	height: 100px;
+	font-size: 1.625rem;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	padding-top: 15px;
+}
+
+.post-date span {
+	font-size: 1rem;
+	border-top: 1px rgba(255, 255, 255, .5) solid;
+	padding-top: 6px;
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+}
+
+.post-title {
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+.post-title, .post-cat {
+	margin-left: 120px;
+}
+
+article img {
+	margin-bottom: 20px;
+}
+
+article p {
+	margin-bottom: 1rem;
+}
+
+.sub-title {
+	font-family: "IBM Plex Sans JP", sans-serif;
+	font-size: 1.375rem;
+	padding: 0 8px 8px;
+	border-bottom: 2px #D43260 solid;
+	font-weight: bold;
+}
+
+.sub-menu {
+	margin-bottom: 60px;
+	list-style: none;
+}
+
+.sub-menu li {
+	border-bottom: 1px rgba(255, 255, 255, .5) solid;
+}
+
+.sub-menu a {
+	color: #fff;
+	padding: 10px;
+	display: block;
+}
+
+.sub-menu a:hover {
+	color: #D43260;
+}
+
+
+/* FOOTER --------------------------------------------- */
+footer {
+	margin-top: 20px;
+	background: #D43260;
+	text-align: center;
+	padding: 26px 0;
+}
+
+footer p {
+	color: #fff;
+	font-size: 0.875rem;
+}
+
+
+/* モバイル版 --------------------------------------------- */
+@media (max-width: 600px) {
+	.page-title {
+		font-size: 2.5rem;
+	}
+
+	/* HEADER */
+	.main-nav {
+		font-size: 1rem;
+		margin-top: 10px;
+	}
+	.main-nav li {
+		margin: 0 20px;
+	}
+
+	/* HOME */
+	.home-content {
+		margin-top: 20%;
+	}
+
+	.page-header {
+		flex-direction: column;
+		align-items: center;
+	}
+}
