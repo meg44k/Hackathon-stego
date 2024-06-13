@@ -17,6 +17,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		<!-- これから指定するCSS -->
 		<link rel="stylesheet" href="../static/css/index.css">
+		<script src="../static/js/index.js" defer></script>
 </head>
 
 <body>
@@ -44,11 +45,32 @@
 				<p><b class="font-larger">フォルダ</b></p>
 				<ul class="folder-edit">
 					<li><a href="edit.html">編集</a></li>
-					<li><a href="ポップアップ">新規作成</a></li>
+					<li><button id="click-btn">新規作成</button></li>
 				</ul>
 			</div>
 		</div>
-		<div></div>
+		<!--
+			ポップアップ
+		 	https://qiita.com/yuaomo/items/55ec1c3ae15ffb272f9c
+		-->
+		<div id="popup-wrapper">
+			<div id="popup-inside">
+				<div id="close">
+					戻る
+				</div>
+				<div id="message">
+					<h2>新規作成</h2>
+					<div id="newcards">
+						<a href="newcards.html" class="newcards-button1">
+							ここに単語帳を作成する
+						</a>
+						<label class="newcards-button1">
+							読み取ったデータをCSVとして出力する<br><span class="newcards-button-text">「WordHolic!」等で使うことができます</span><input type="file" accept=".jpg, .jpeg, .png">
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<!-- フッター -->
