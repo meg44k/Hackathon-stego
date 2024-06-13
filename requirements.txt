@@ -1,4 +1,4 @@
-Flask==1.0.3
+Flask==2.3.3
 python-dotenv==1.0.1
 scikit_learn==1.5.0
 gensim==3.8.3
