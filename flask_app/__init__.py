@@ -8,10 +8,13 @@ def create_app():
     from flask_app.views.folder import folder_bp
     from flask_app.views.login import login_bp
     from flask_app.views.news import news_bp
+    from flask_app.views.newcards import newcards_bp
+
 
     app.register_blueprint(index_bp)
     app.register_blueprint(folder_bp)
     app.register_blueprint(login_bp)
     app.register_blueprint(news_bp)
+    app.register_blueprint(newcards_bp)
 
     return app

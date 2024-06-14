@@ -24,7 +24,7 @@
 	<div id="folder" class="big-bg">
 		<!-- ヘッダー部分 -->
 		<header class="page-header wrapper">
-			<h1><a href="index.html"><img class="logo" src="../images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
+			<h1><a href="index.html"><img class="logo" src="../static/images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
 			<nav>
 				<ul class="main-nav">
 					<li><a href="news.html">News</a></li>
@@ -45,7 +45,7 @@
 				<p><b class="font-larger">フォルダ</b></p>
 				<ul class="folder-edit">
 					<li><a href="edit.html">編集</a></li>
-					<li><button id="click-btn">新規作成</a></li>
+					<li><button id="click-btn">新規作成</button></li>
 				</ul>
 			</div>
 		</div>
@@ -55,18 +55,22 @@
 		-->
 		<div id="popup-wrapper">
 			<div id="popup-inside">
-				<div id="close">戻る</div>
+				<div id="close">
+					戻る
+				</div>
 				<div id="message">
 					<h2>新規作成</h2>
 					<div id="newcards">
-						<button id="newcards-button">ここに単語帳を作成する</button>
-						<button id="newcards-button">読み取ったデータをCSVとして出力する<br><span class="newcards-button-text">「WordHolic!」等で使うことができます</span></button>
+						<a href="newcards.html" class="newcards-button1">
+							ここに単語帳を作成する
+						</a>
+						<label href="newcards.html" class="newcards-button1">
+							読み取ったデータをCSVとして出力する<br><span class="newcards-button-text">「WordHolic!」等で使うことができます</span><input type="file" accept=".jpg, .jpeg, .png">
+						</label>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
 	</main>
 
 	<!-- フッター -->

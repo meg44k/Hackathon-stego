@@ -44,6 +44,7 @@ img {
 
 .main-nav a {
 	color: #fff;
+	transition: 0.2s; /* ホバーをなめらかに */
 }
 
 .main-nav a:hover {	/* aにカーソルを合わせたときに適用される */
@@ -85,16 +86,11 @@ img {
 
 .login-content a {
 	color: #fff;
+	transition: 0.2s; /* ホバーをなめらかに */
 }
 
 .login-content a:hover {
 	color: #D43260;
-}
-
-form {
-	margin: 0 auto;
-	max-width: 400px;
-	border: 1px #fff solid;
 }
 
 form div {
@@ -103,13 +99,21 @@ form div {
 
 label {
 	font-size: 1.125rem;
-	margin-bottom: 10px;
 	display: block;
 }
 
 input {
 	text-align: left;
 	color: #fff;
+}
+
+input[type="text"] {
+	width: 100%;
+	max-width: 240px;
+	border: 1px #fff solid;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 1rem;
 }
 
 
@@ -129,7 +133,7 @@ input {
 /* 見出し */
 .page-title {
 	font-size: 5rem;
-	font-family: 'Rubik', serif;
+	font-family: 'Rubik', "IBM Plex Sans JP", sans-serif;
 	text-transform: uppercase;
 	font-weight: bold;
 }
@@ -139,8 +143,9 @@ input {
 	font-size: 1.375rem;
 	background: #D43260;
 	color: #fff;
-	border-radius: 5px;	/* 角丸 */
+	border-radius: 10px;	/* 角丸 */
 	padding: 18px 32px;
+	transition: 0.2s; /* ホバーをなめらかに */
 }
 
 .button:hover {
@@ -202,6 +207,7 @@ input {
 .folder-edit li {
 	margin-left: 44px;
 	border-radius: 10px;
+	transition: 0.2s; /* ホバーをなめらかに */
 }
 
 .folder-edit a, .folder-edit button {
@@ -254,20 +260,34 @@ input {
 #newcards {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 150px;
 	gap: 10px;
 }
 
-#newcards-button {
+/* labelをボタンらしく */
+.newcards-button1 {
 	font-size: 1.5rem;
 	color: #fff;
-	background: #D43260;
+	background-color: #D43260;
 	padding: 20px;
+	cursor: pointer; /* カーソルを指に */
+	border-radius: 10px; /* 角の丸み */
+	transition: 0.2s; /* ホバーをなめらかに */
+}
+
+/* ホバー時 */
+.newcards-button1:hover {
+	background: #720d64;
+}
+
+/* inputは隠す */
+.newcards-button1 input {
+	display: none;
 }
 
 .newcards-button-text {
 	font-size: 0.5rem;
 }
-
   
 #close {
 	font-size: 1.23rem;
@@ -277,12 +297,52 @@ input {
 	cursor: pointer;
 	padding: 5px 20px;
 	border-radius: 5px;
+	transition: 0.2s; /* ホバーをなめらかに */
 }
 
 #close:hover {
 	background-color: rgba(255, 255, 255, .5);
 }
-  
+
+
+
+/* NEWCARDS --------------------------------------------- */
+
+.newcards-content {
+	text-align: center;
+	margin-top: 5%;
+	font-size: 1.5rem;
+}
+
+.newcards-content p {
+	font-size: 1.125rem;
+	margin: 30px 0 30px;
+}
+
+/* labelをボタンらしく */
+.newcards-button2 {
+	margin: 10% 20%;
+	font-size: 1.5rem;
+	color: #fff;
+	border: 5px #fff solid;
+	padding: 20px;
+	cursor: pointer; /* カーソルを指に */
+	border-radius: 5px; /* 角の丸み */
+	transition: 0.2s; /* ホバーをなめらかに */
+}
+
+/* ホバー時 */
+.newcards-button2:hover {
+	background: rgba(255, 255, 255, .5);
+}
+
+
+/* inputは隠す */
+.newcards-button2 input {
+	display: none;
+}
+
+
 
 
 
@@ -380,6 +440,7 @@ article p {
 	color: #fff;
 	padding: 10px;
 	display: block;
+	transition: 0.2s; /* ホバーをなめらかに */
 }
 
 .sub-menu a:hover {
