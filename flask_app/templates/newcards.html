@@ -47,12 +47,14 @@
 					<input type="text" id="username" name="username" placeholder="ファイル名を入力...">
 				</div>
 			</form>
-			<label class="newcards-button2">
-				読み取る写真を選択...<input type="file" accept=".jpg, .jpeg, .png">
-			</label>
-			<a href="#" class="newcards-button1">
-				生成！
-			</a>
+			<form name = "upload_form" action="{{url_for('newcards.upload')}}" method="POST" enctype="multipart/form-data">
+				<label class="newcards-button2">
+					読み取る写真を選択...<input name="file" type="file" accept=".jpg, .jpeg, .png">
+				</label>
+				<a href="#" onclick="document.upload_form.submit();"class="newcards-button1">
+					生成！
+				</a>
+			</form>
 		</div><!-- /.login-content -->
 	</main>
 
