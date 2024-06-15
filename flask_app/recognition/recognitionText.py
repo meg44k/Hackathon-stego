@@ -19,8 +19,6 @@ english_word_pattern = re.compile(r'\b([a-zA-Z\- \(\)]+)\b')
 japanese_meaning_pattern = re.compile(r'(?<!\w)([ぁ-んァ-ヶ一-龥]+)(?!\w)')
 
 # 英語の単語と日本語の意味を格納するリスト
-english_words = []
-japanese_meanings = []
 
 # 不要な品詞や助詞を除外する正規表現パターン
 unnecessary_japanese_pattern = re.compile(r'^(名|動|形|目|超|日|旬|關|图|證|□|\d+|\.|:|~|、|の|に)$')
@@ -60,6 +58,8 @@ def extract_text_from_images(input_directory):
 # 出力を文字列として定義
 
 def clean_text(output):
+    english_words = []
+    japanese_meanings = []
     # 出力を行ごとに分割して処理
     for line in output.splitlines():
         # 英語の単語を抽出

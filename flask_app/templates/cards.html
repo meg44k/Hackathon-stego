@@ -55,16 +55,7 @@
 			</button>
 		</div>
 	</div>
-
-	<!-- テスト用 -->
-	
-	<div class="add-word">
-		<input type="text" id="englishWord" placeholder="英単語" autocomplete="off">
-		<input type="text" id="japaneseWord" placeholder="日本語訳" autocomplete="off">
-		<button onclick="addWord()">単語を追加</button>
-	</div>
-
-
+　g
 	<!-- フッター -->
 	<footer>
 		<div class="wrapper">
@@ -74,7 +65,8 @@
 	<script src="../static/js/cards_scroll.js"></script>
 	<script src="../static/js/cards_arrow.js"></script>
 	<!-- <script src="../static/js/cards_list.js"></script> -->
-	<script>let words = [];
+	<script>
+		let words = [];
 		let currentIndex = 0;
 		let showingEnglish = true;
 		const en_words = JSON.parse(`{{en_words|tojson}}`)
@@ -93,6 +85,7 @@
 			updateCard();
 		}
 		function addWords(){
+			words = [];
 			console.log("Called addWords")
 			for (let i = 0; i < en_words.length; i++) {
 				if (englishWord && japaneseWord) {
