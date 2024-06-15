@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="flashcards" content="写真から単語帳を自動作成するアプリ．">
-	<title>単語帳を作る魔法　-　Newcards</title>
+	<title>単語帳を作る魔法　-　News</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- ファビコン -->
 	<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
@@ -20,13 +21,13 @@
 </head>
 
 <body>
-	<div id="folder" class="big-bg">
+	<div id="news" class="big-bg">
 		<!-- ヘッダー部分 -->
 		<header class="page-header wrapper">
 			<h1><a href="index.html"><img class="logo" src="../static/images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
 			<nav>
 				<ul class="main-nav">
-					<li><a href="news.html">News</a></li>
+					<li><a href="folder.html">Folder</a></li>
 					<li><a href="login.html">Log in</a></li>
 				</ul>
 			</nav>
@@ -34,29 +35,33 @@
 
 		<!-- メインコンテンツ -->
 		<div class="wrapper">
-			<h2 class="page-title">New Cards</h2>
+			<h2 class="page-title">News</h2>
 		</div><!-- /.wrapper -->
 	</div><!-- /#home -->
 
-	<main>
-		<div class="newcards-content wrapper">
-			<form id="folder-name-form">
-				<div class="newcards-content-filename">
-					<label for="folder-name">フォルダ名</label>
-					<input type="text" id="folder-name" name="folder-name" placeholder="フォルダ名を入力..." autocomplete="off">
-				</div>
-			</form>
-			<form name = "upload_form" action="{{url_for('newcards.upload')}}" method="POST" enctype="multipart/form-data">
-				<label class="newcards-button2">
-					読み取る写真を選択...<input name="file" type="file" accept=".jpg, .jpeg, .png" id="file-import-direct">
-				</label>
-				<img id="file-preview">
-				<a href="cards.html" onclick="document.upload_form.submit();"class="newcards-button1">
-					生成！
-				</a>
-			</form>
-		</div><!-- /.login-content -->
-	</main>
+	<!-- 横スクロール-->
+	<div id="jsnap">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+	</div>
+
+
+	<!-- ボタン -->
+	<div id="buttons">
+		<button id ="prev" type = "button" onclick = "prev()">
+			<span style="font-size:4em;">＜</span>
+		</button>
+
+		<button id = "next" type = "button" onclick = "next()">
+			<span style="font-size:4em;">＞</span>
+		</button>
+	</div>
+
 
 	<!-- フッター -->
 	<footer>
@@ -64,6 +69,6 @@
 			<p><small>&copy; 2024 EYO</small></p>
 		</div>
 	</footer>
-	<script src="../static/js/file_preview.js"></script>
+	<script src="../static/js/cards_scroll.js"></script>
 </body>
 </html>
