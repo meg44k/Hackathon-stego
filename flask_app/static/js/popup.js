@@ -1,6 +1,6 @@
-const clickBtn = document.querySelector('#click-btn');
-const popupWrapper = document.querySelector('#popup-wrapper');
-const close = document.querySelector('#close');
+const clickBtn = document.getElementById('click-btn');
+const popupWrapper = document.getElementById('popup-wrapper');
+const close = document.getElementById('close');
 
 // ボタンをクリックしたときにポップアップを表示させる
 clickBtn.addEventListener('click', () => {

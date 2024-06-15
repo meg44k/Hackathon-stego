@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="flashcards" content="写真から単語帳を自動作成するアプリ．">
+	<title>単語帳を作る魔法　-　News</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- ファビコン -->
+	<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+	<!-- CSS -->
+		<!-- ress.cssの設定 -->
+		<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+		<!-- google fontsの指定 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+		<!-- これから指定するCSS -->
+		<link rel="stylesheet" href="../static/css/index.css">
+</head>
+
+<body>
+	<div id="news" class="big-bg">
+		<!-- ヘッダー部分 -->
+		<header class="page-header wrapper">
+			<h1><a href="index.html"><img class="logo" src="../static/images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
+			<nav>
+				<ul class="main-nav">
+					<li><a href="folder.html">Folder</a></li>
+					<li><a href="login.html">Log in</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- メインコンテンツ -->
+		<div class="wrapper">
+			<h2 class="page-title"><!-- ここはフォルダ名を入れる --><i>フォルダ名</i></h2>
+		</div><!-- /.wrapper -->
+	</div><!-- /#home -->
+
+	<div class="cards-display">
+		<!-- 現在のカード／総カード数 -->
+		<div id="flashcard-number" class="card-number"></div>
+		
+		<!-- ボタン -->
+		<div id="buttons">
+			<button id ="prev" type = "button" onclick = "prev()">
+				<span style="font-size:4em;">＜</span>
+			</button>
+			<!-- 単語が表示されるところ -->
+			<div id="flashcard" class="card" onclick="toggleCard()"></div>
+			<button id = "next" type = "button" onclick = "next()">
+				<span style="font-size:4em;">＞</span>
+			</button>
+		</div>
+	</div>
+　g
+	<!-- フッター -->
+	<footer>
+		<div class="wrapper">
+			<p><small>&copy; 2024 EYO</small></p>
+		</div>
+	</footer>
+	<script src="../static/js/cards_scroll.js"></script>
+	<script src="../static/js/cards_arrow.js"></script>
+	<!-- <script src="../static/js/cards_list.js"></script> -->
+	<script>
+		let words = [];
+		let currentIndex = 0;
+		let showingEnglish = true;
+		const en_words = JSON.parse(`{{en_words|tojson}}`)
+		const ja_words = JSON.parse(`{{ja_words|tojson}}`)
+		console.log(en_words)
+		console.log(ja_words)
+		const englishWord = en_words[0];
+		const japaneseWord = ja_words[0];
+		
+		const flashcard = document.getElementById('flashcard');
+		const flashcardNumber = document.getElementById('flashcard-number');
+		
+		function toggleCard() {
+			if (en_words.length === 0) return;
+			showingEnglish = !showingEnglish;
+			updateCard();
+		}
+		function addWords(){
+			words = [];
+			console.log("Called addWords")
+			for (let i = 0; i < en_words.length; i++) {
+				if (englishWord && japaneseWord) {
+					words.push({ english: en_words[i], japanese: ja_words[i] });
+				}
+			}
+			updateCard();
+		}
+		
+		function updateCard() {
+			console.log("Called updateCard")
+			
+			// if (words.length === 0) {
+				// 	flashcard.textContent = '[編集]から単語を追加してください';
+				// 	return;
+				// }
+				const word = words[currentIndex];
+				console.log(word)
+			flashcard.textContent = showingEnglish ? word.english : word.japanese;
+			if (en_words.length === 0) {
+				console.log("True")
+				flashcardNumber.textContent = '';
+			} else {
+				console.log("False")
+				flashcardNumber.textContent = `${currentIndex+1}　/　${en_words.length}`;
+			}
+			
+		}
+		
+		
+		// テスト用
+		
+		// function addWord() {
+		//     const englishWord = document.getElementById('englishWord').value;
+		//     const japaneseWord = document.getElementById('japaneseWord').value;
+		//     if (englishWord && japaneseWord) {
+		//         words.push({ english: englishWord, japanese: japaneseWord });
+		//         document.getElementById('englishWord').value = '';
+		//         document.getElementById('japaneseWord').value = '';
+		//         if (words.length === 1) {
+		//             updateCard();
+		//         }
+		//     }
+		// }
+		
+		// 初期状態のカードを更新
+		addWords();
+		
+		</script>
+</body>
+</html>
