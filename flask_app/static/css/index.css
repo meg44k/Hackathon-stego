@@ -364,6 +364,16 @@ input[type="text"] {
 	min-height: 78vh;
 }
 
+.fileclear {
+	display: none;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.fileclear:hover {
+	color: #D43260;
+}
+
 .newcards-content-filename label {
 	font-size: 1.5rem;
 }
