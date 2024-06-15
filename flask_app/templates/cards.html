@@ -35,31 +35,33 @@
 
 		<!-- メインコンテンツ -->
 		<div class="wrapper">
-			<h2 class="page-title">News</h2>
+			<h2 class="page-title"><!-- ここはフォルダ名を入れる --><i>フォルダ名</i></h2>
 		</div><!-- /.wrapper -->
 	</div><!-- /#home -->
 
-	<!-- 横スクロール-->
-	<div id="jsnap">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-		<div>6</div>
-		<div>7</div>
+	<div class="cards-display">
+		<!-- 現在のカード／総カード数 -->
+		<div id="flashcard-number" class="card-number"></div>
+		
+		<!-- ボタン -->
+		<div id="buttons">
+			<button id ="prev" type = "button" onclick = "prev()">
+				<span style="font-size:4em;">＜</span>
+			</button>
+			<!-- 単語が表示されるところ -->
+			<div id="flashcard" class="card" onclick="toggleCard()"></div>
+			<button id = "next" type = "button" onclick = "next()">
+				<span style="font-size:4em;">＞</span>
+			</button>
+		</div>
 	</div>
 
-
-	<!-- ボタン -->
-	<div id="buttons">
-		<button id ="prev" type = "button" onclick = "prev()">
-			<span style="font-size:4em;">＜</span>
-		</button>
-
-		<button id = "next" type = "button" onclick = "next()">
-			<span style="font-size:4em;">＞</span>
-		</button>
+	<!-- テスト用 -->
+	
+	<div class="add-word">
+		<input type="text" id="englishWord" placeholder="英単語" autocomplete="off">
+		<input type="text" id="japaneseWord" placeholder="日本語訳" autocomplete="off">
+		<button onclick="addWord()">単語を追加</button>
 	</div>
 
 
@@ -70,5 +72,7 @@
 		</div>
 	</footer>
 	<script src="../static/js/cards_scroll.js"></script>
+	<script src="../static/js/cards_arrow.js"></script>
+	<script src="../static/js/cards_list.js"></script>
 </body>
 </html>

@@ -479,43 +479,46 @@ article p {
 
 
 /* CARDS --------------------------------------------- */
-#jsnap {
+.cards-display {
+	min-height: 400px;
+	display: block;
+}
+
+#flashcard {
 	font-size: 3rem;
 	width: 100%;
-	display: flex;
-	/*タッチ操作などでスクロールできないようにする。*/
-	overflow-x: hidden;
+	background-color: #04152e;
+	border-radius: 20px;
+	padding: 100px 20px;
 }
 
-#jsnap > div {	
-	height: 100%;
-	width: 100%;
-	flex: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-	
-	
-#jsnap > div > img {
-	width: 50%;
-	padding-left: 0;
+.card-number {
+	color: #fff;
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 60px;
 }
 
-/* buttonを左右に振り分け */
-#modoru{
-	float: left;   
-}
-
-#susumu{
-	float:right;  
+.card {
+	text-align: center;
+	position: relative;
 }
 
 /* ボタンエリアの幅，センタリングなど */
 #buttons {
-	display:block;
-	margin:0 auto;
-	width:50%;
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* background-color: #041329;
+	border-radius: 10px;
+	padding: 50px 20px; */
+}
+
+#buttons button {
+	color: #fff;
 }
 
 /* FOOTER --------------------------------------------- */
