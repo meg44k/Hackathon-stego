@@ -4,10 +4,14 @@ import os
 import re
 import json
 import base64
+from dotenv import load_dotenv, find_dotenv
+from google.oauth2.service_account import Credentials
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '../recognition/cool-ascent-425906-b5-18c081794b5d.json'
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '../recognition/cool-ascent-425906-b5-18c081794b5d.json'
 
 input_path = '../uploads'
+
+load_dotenv(find_dotenv())
 
 
 # 正規表現パターンを定義
@@ -23,7 +27,19 @@ unnecessary_japanese_pattern = re.compile(r'^(名|動|形|目|超|日|旬|關|�
 
 def detect_text(path):
     """ファイル内のテキストを検出します。"""
-    client = vision.ImageAnnotatorClient()
+    cred = Credentials.from_service_account_info({ 
+        "type": "service_account",
+        "project_id": os.environ["PROJECT_ID"],
+        "private_key_id": os.environ["PRIVATE_KEY_ID"],
+        "private_key": os.environ["PRIVATE_KEY"].replace("\\n", "\n"),
+        "client_email": os.environ["CLIENT_EMAIL"],
+        "client_id": os.environ["CLIENT_ID"],
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": os.environ["CLIENT_X509_CERT_URL"]
+    })
+    client = vision.ImageAnnotatorClient(credentials=cred)
 
     with io.open(path, 'rb') as image_file:
         content = image_file.read()
