@@ -16,4 +16,4 @@ def cards():
     print(connected_en_words)
     print(connected_ja_words)
     # os.remove('./uploads/*')
-    return render_template('cards.html',en_words=connected_en_words,ja_words=connected_ja_words)
+    return render_template('cards.html',en_words=connected_en_words,ja_words=connected_ja_words,folder_name=folder_name)

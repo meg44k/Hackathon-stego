@@ -39,13 +39,11 @@
 	</div><!-- /#home -->
 
 	<div class="newcards-content wrapper">
-		<form id="folder-name-form">
+		<form id="folder-name-form"  name = "upload_form" action="{{url_for('newcards.upload')}}" method="POST" enctype="multipart/form-data">
 			<div class="newcards-content-filename">
 				<label for="folder-name">フォルダ名</label>
 				<input type="text" id="folder-name" name="folder-name" placeholder="フォルダ名を入力..." autocomplete="off">
 			</div>
-		</form>
-		<form name = "upload_form" action="{{url_for('newcards.upload')}}" method="POST" enctype="multipart/form-data">
 			<label class="newcards-button2">
 				読み取る写真を選択...<input name="file" type="file" accept=".jpg, .jpeg, .png" class="file-import-direct" id="file-import-choose">
 			</label>
