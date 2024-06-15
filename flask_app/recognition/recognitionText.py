@@ -2,11 +2,25 @@ from google.cloud import vision
 import io
 import os
 import re
+import json
+import base64
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = './cool-ascent-425906-b5-18c081794b5d.json'
+def lambda_handler(event, context):
+    # 環境変数をデコード    
+    json_str = base64.b64decode( os.environ['JSON'] )
+    print json_str
 
-# 画像が含まれるディレクトリのパス（ローカル）
-input_directory = '../uploads'
+    # デコードした環境変数をjson.loadsして辞書型に変換
+    json_dict = json.loads( json_str )
+
+    # あとは使うだけ
+    print json_dict['name']
+
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '../recognition/cool-ascent-425906-b5-18c081794b5d.json'
+
+input_path = '../uploads'
+
 
 # 正規表現パターンを定義
 english_word_pattern = re.compile(r'\b([a-zA-Z\- \(\)]+)\b')
@@ -40,7 +54,6 @@ def extract_text_from_images(input_directory):
             return text
 
 # 出力を文字列として定義
-output = extract_text_from_images(input_directory)
 
 def clean_text(output):
     # 出力を行ごとに分割して処理
@@ -56,15 +69,13 @@ def clean_text(output):
             if not unnecessary_japanese_pattern.match(meaning):
                 japanese_meanings.append(meaning.strip())
         # 不要な品詞や助詞を除去してクリーンアップ
+    lower_english_words = [w.lower() for w in english_words]
     cleaned_japanese_meanings = [meaning for meaning in japanese_meanings if not unnecessary_japanese_pattern.match(meaning)]
-    return cleaned_japanese_meanings, english_words
+    return  lower_english_words,cleaned_japanese_meanings
 
-
-
-# 結果を出力
-if __name__ == '__main__':
-    
-    output = extract_text_from_images(input_directory)
+if __name__ == "__main__":
+    output = extract_text_from_images(input_path)
     result = clean_text(output)
     print(result[0])
     print(result[1])
+
