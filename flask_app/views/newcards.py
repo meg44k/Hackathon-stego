@@ -16,4 +16,4 @@ def upload():
     if request.method == 'POST':
         file = request.files['file']
         file.save(os.path.join('./uploads', file.filename))
-        return redirect('/index') #要変更
+        return redirect('/cards') #要変更
