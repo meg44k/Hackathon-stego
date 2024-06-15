@@ -5,18 +5,6 @@ import re
 import json
 import base64
 
-def lambda_handler(event, context):
-    # 環境変数をデコード    
-    json_str = base64.b64decode( os.environ['JSON'] )
-    print json_str
-
-    # デコードした環境変数をjson.loadsして辞書型に変換
-    json_dict = json.loads( json_str )
-
-    # あとは使うだけ
-    print json_dict['name']
-
-
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '../recognition/cool-ascent-425906-b5-18c081794b5d.json'
 
 input_path = '../uploads'
