@@ -1,17 +1,13 @@
-const form = document.getElementById("folder-name-form");
-const input = document.getElementById("folder-name");
-const ul = document.getElementById("folder-ul");
+document.getElementById('file-import-choose').addEventListener('change', (e) => {
+	const file = e.target.files[0]; // ファイル本体
 
-function add() {
-	const li = document.createElement("li");
-	li.innerText = input.value;
-	li.classList.add("list-group-item");
-	ul.appendChild(li);
-	input.value = "";
-}
-
-form.addEventListener("submit", function (event) {
-	event.preventDefault();
-	console.log(input.value);
-	add();
-})
+	// エラー回避
+	if(!file) {
+		return;
+	}
+	const reader = new FileReader();
+	reader.onload = (e) => {
+		document.getElementById('file-preview').src = e.target.result; // 読み込み完了時にData URIをsrcに渡す
+	};
+	reader.readAsDataURL(file); // 画像をData URIとして読み込む
+});

@@ -10,7 +10,7 @@ body {
 	font-weight: normal;
 	line-height: 1.7;
 	color: #fff;
-	background: #142235;
+	background: #041329;
 }
 
 a {
@@ -19,6 +19,10 @@ a {
 
 img {
 	max-width: 100%;	/* 画像が親要素より大きくなることを防ぐ */
+}
+
+.contents-display {
+	min-height: 78vh;
 }
 
 
@@ -132,9 +136,17 @@ input[type="text"] {
 
 /* プロジェクト名 */
 .project-name {
+	opacity: 0;
+	transition: opacity 2s ease-in-out;
 	font-size: 5rem;
 	font-family: 'Shippori Antique', "IBM Plex Sans JP", sans-serif;
 	margin: 40px auto;
+}
+
+/* プロジェクト説明 */
+.project-explain {
+	opacity: 0;
+	transition: opacity 2s ease-in-out;
 }
 
 /* 見出し */
@@ -146,6 +158,8 @@ input[type="text"] {
 }
 
 .page-title-index {
+	opacity: 0;
+	transition: opacity 2s ease-in-out;
 	font-size: 2.5rem;
 	font-family: 'Rubik', "IBM Plex Sans JP", sans-serif;
 	text-transform: uppercase;
@@ -154,12 +168,13 @@ input[type="text"] {
 
 /* ボタン */
 .button {
+	opacity: 0;
+	transition: opacity 2s ease-in-out, background-color 0.2s;
 	font-size: 1.375rem;
 	background: #D43260;
 	color: #fff;
 	border-radius: 10px;	/* 角丸 */
 	padding: 18px 32px;
-	transition: 0.2s; /* ホバーをなめらかに */
 }
 
 .button:hover {
@@ -192,7 +207,7 @@ input[type="text"] {
 /* FOLDER --------------------------------------------- */
 #folder {
 	background-color: rgb(5, 2, 24);
-	height: 210px;
+	height: 22vh;
 	margin-bottom: 0px;
 }
 
@@ -203,7 +218,7 @@ input[type="text"] {
 .folder-edit-belt {
 	font-size: 1.65rem;
 	color: #fff;
-	background: #28548d;
+	background: #112642;
 }
 
 .folder-edit-flex {
@@ -325,8 +340,9 @@ input[type="text"] {
 .newcards-content {
 	text-align: center;
 	margin-top: 5%;
+	margin-bottom: 40px;
 	font-size: 1.5rem;
-	min-height: 500px;
+	min-height: 78vh;
 }
 
 .newcards-content-filename label {
@@ -363,12 +379,35 @@ input[type="text"] {
 	display: none;
 }
 
+#file-preview {
+	max-width: 400px;
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+
 
 
 /* FOLDER LIST --------------------------------------------- */
 .folder-list {
 	height: 800px;
 	margin-top: 20px;
+}
+
+
+/* EDIT --------------------------------------------- */
+.edit-display {
+	min-height: 100vh;
+}
+
+#OKbutton {
+	font-family: "Rubik", "IBM Plex Sans JP", sans-serif;
+	position: fixed;
+	top: 75vh;
+	left: 82vw;
+	padding: 10px 30px;
+	border-radius: 20px;
+	font-size: 3rem;
 }
 
 
@@ -480,14 +519,14 @@ article p {
 
 /* CARDS --------------------------------------------- */
 .cards-display {
-	min-height: 400px;
+	min-height: 78vh;
 	display: block;
 }
 
 #flashcard {
 	font-size: 3rem;
 	width: 100%;
-	background-color: #04152e;
+	background-color: #1c2066;
 	border-radius: 20px;
 	padding: 100px 20px;
 }

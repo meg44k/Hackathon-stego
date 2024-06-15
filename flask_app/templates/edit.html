@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="flashcards" content="写真から単語帳を自動作成するアプリ．">
-	<title>単語帳を作る魔法　-　Folder</title>
+	<title>単語帳を作る魔法　-　Edit</title>
 
 	<!-- ファビコン -->
 	<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
@@ -26,7 +26,7 @@
 			<h1><a href="index.html"><img class="logo" src="../static/images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
 			<nav>
 				<ul class="main-nav">
-					<li><a href="news.html">News</a></li>
+					<li><a href="folder.html">Folder</a></li>
 					<li><a href="login.html">Log in</a></li>
 				</ul>
 			</nav>
@@ -34,45 +34,17 @@
 
 		<!-- メインコンテンツ -->
 		<div class="wrapper">
-			<h2 class="page-title">Folder</h2>
+			<h2 class="page-title">Edit</h2>
 		</div><!-- /.wrapper -->
-	</div><!-- /#folder -->
+	</div><!-- /#home -->
 
 	<main class="contents-display">
-		<div class="folder-edit-belt">
-			<div class="folder-edit-flex wrapper">
-				<p><b class="font-larger">フォルダ</b></p>
-				<ul class="folder-edit">
-					<li><a href="edit.html">編集</a></li>
-					<li><button id="click-btn">新規作成</button></li>
-				</ul>
-			</div>
-		</div>
-		<!--
-			ポップアップ
-		 	https://qiita.com/yuaomo/items/55ec1c3ae15ffb272f9c
-		-->
-		<div id="popup-wrapper">
-			<div id="popup-inside">
-				<div id="close">
-					戻る
-				</div>
-				<div id="message">
-					<h2>新規作成</h2>
-					<div id="newcards">
-						<a href="newcards.html" class="newcards-button1">
-							ここに単語帳を作成する
-						</a>
-						<label href="newcards.html" class="newcards-button1">
-							読み取ったデータをCSVとして出力する<br><span class="newcards-button-text">「WordHolic!」等で使うことができます</span><input type="file" accept=".jpg, .jpeg, .png">
-						</label>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="folder-list wrapper">
-			<ul class="list-group text-secondary" id="folder-ul"></ul>
-		</div>
+		<!-- 編集画面入れるところ -->
+
+		<!-- OKボタン（固定） -->
+		<a href="folder.html" class="newcards-button1" id="OKbutton">
+			OK
+		</a>
 	</main>
 
 	<!-- フッター -->
