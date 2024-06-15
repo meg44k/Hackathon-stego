@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="flashcards" content="写真から単語帳を自動作成するアプリ．">
-	<title>単語帳を作る魔法　-　Newcards</title>
+	<title>単語帳を作る魔法　-　News</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- ファビコン -->
 	<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
@@ -20,13 +21,13 @@
 </head>
 
 <body>
-	<div id="folder" class="big-bg">
+	<div id="news" class="big-bg">
 		<!-- ヘッダー部分 -->
 		<header class="page-header wrapper">
 			<h1><a href="index.html"><img class="logo" src="../static/images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
 			<nav>
 				<ul class="main-nav">
-					<li><a href="news.html">News</a></li>
+					<li><a href="folder.html">Folder</a></li>
 					<li><a href="login.html">Log in</a></li>
 				</ul>
 			</nav>
@@ -34,29 +35,35 @@
 
 		<!-- メインコンテンツ -->
 		<div class="wrapper">
-			<h2 class="page-title">New Cards</h2>
+			<h2 class="page-title"><!-- ここはフォルダ名を入れる --><i>フォルダ名</i></h2>
 		</div><!-- /.wrapper -->
 	</div><!-- /#home -->
 
-	<main>
-		<div class="newcards-content wrapper">
-			<form id="folder-name-form">
-				<div class="newcards-content-filename">
-					<label for="folder-name">フォルダ名</label>
-					<input type="text" id="folder-name" name="folder-name" placeholder="フォルダ名を入力..." autocomplete="off">
-				</div>
-			</form>
-			<form name = "upload_form" action="{{url_for('newcards.upload')}}" method="POST" enctype="multipart/form-data">
-				<label class="newcards-button2">
-					読み取る写真を選択...<input name="file" type="file" accept=".jpg, .jpeg, .png" id="file-import-direct">
-				</label>
-				<img id="file-preview">
-				<a href="cards.html" onclick="document.upload_form.submit();"class="newcards-button1">
-					生成！
-				</a>
-			</form>
-		</div><!-- /.login-content -->
-	</main>
+	<div class="cards-display">
+		<!-- 現在のカード／総カード数 -->
+		<div id="flashcard-number" class="card-number"></div>
+		
+		<!-- ボタン -->
+		<div id="buttons">
+			<button id ="prev" type = "button" onclick = "prev()">
+				<span style="font-size:4em;">＜</span>
+			</button>
+			<!-- 単語が表示されるところ -->
+			<div id="flashcard" class="card" onclick="toggleCard()"></div>
+			<button id = "next" type = "button" onclick = "next()">
+				<span style="font-size:4em;">＞</span>
+			</button>
+		</div>
+	</div>
+
+	<!-- テスト用 -->
+	
+	<div class="add-word">
+		<input type="text" id="englishWord" placeholder="英単語" autocomplete="off">
+		<input type="text" id="japaneseWord" placeholder="日本語訳" autocomplete="off">
+		<button onclick="addWord()">単語を追加</button>
+	</div>
+
 
 	<!-- フッター -->
 	<footer>
@@ -64,6 +71,8 @@
 			<p><small>&copy; 2024 EYO</small></p>
 		</div>
 	</footer>
-	<script src="../static/js/file_preview.js"></script>
+	<script src="../static/js/cards_scroll.js"></script>
+	<script src="../static/js/cards_arrow.js"></script>
+	<script src="../static/js/cards_list.js"></script>
 </body>
 </html>
