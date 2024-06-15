@@ -10,6 +10,7 @@ def create_app():
     from flask_app.views.news import news_bp
     from flask_app.views.newcards import newcards_bp
     from flask_app.views.cards import cards_bp
+    from flask_app.views.edit import edit_bp
 
     app.register_blueprint(index_bp)
     app.register_blueprint(folder_bp)
@@ -17,5 +18,6 @@ def create_app():
     app.register_blueprint(news_bp)
     app.register_blueprint(newcards_bp)
     app.register_blueprint(cards_bp)
+    app.register_blueprint(edit_bp)
 
     return app
