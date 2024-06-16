@@ -25,7 +25,7 @@ scipy==1.12.0<br>
 ## ディレクトリ構成
 
 ```
-roo
+root
 │  .DS_Store
 │  .env
 │  .gitattributes
@@ -41,37 +41,37 @@ roo
 │  │
 │  ├─recognition
 │  │  │  .DS_Store
-│  │  │  recognitionText.py     
+│  │  │  recognitionText.py  //英・日の単語認識
 │  │
 │  ├─static
 │  │  ├─css
-│  │  │      index.css
-│  │  │      responsible.css
+│  │  │      index.css //全ページのCSS
+│  │  │      responsible.css  //レスポンシブルデザインのCSS
 │  │  │
 │  │  ├─images
-│  │  │      logo_kari.svg
+│  │  │      logo_kari.svg //タイトルロゴ
 │  │  │
 │  │  └─js
-│  │          cards_arrow.js
-│  │          cards_list.js
-│  │          cards_scroll.js
-│  │          file_preview.js
-│  │          index_animation.js
-│  │          popup.js
-│  │          popup_animation.js
-│  │          upload_filiname.js
+│  │          cards_arrow.js  //矢印キーでカードをスクロールする機能
+│  │          cards_list.js  //単語帳を表示させる機能
+│  │          cards_scroll.js  //カードをスクロールする機能
+│  │          file_preview.js  //アップロードしたファイルをプレビューを表示
+│  │          index_animation.js  //ロード時のアニメーション
+│  │          popup.js  //ポップアップの実装
+│  │          popup_animation.js  //ポップアップのアニメーション
+│  │          upload_filiname.js  //ホーム画面にアップロードしたファイルを追加
 │  │
 │  ├─templates
-│  │      cards.html
-│  │      edit.html
-│  │      folder.html
-│  │      index.html
-│  │      login.html
-│  │      newcards.html
-│  │      news.html
+│  │      cards.html  //単語帳の画面
+│  │      edit.html  //単語帳の編集画面
+│  │      folder.html  //ホーム画面
+│  │      index.html  //スタート画面
+│  │      login.html  //ログイン画面
+│  │      newcards.html  //新たな単語帳の生成画面
+│  │      news.html  //ニュースページ
 │  │
-│  ├─uploads
-│  │      a.jpg
+│  ├─uploads  //読み取った写真の格納場所
+│  │
 │  │
 │  ├─views
 │  │  │  cards.py
