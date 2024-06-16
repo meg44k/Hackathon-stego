@@ -25,30 +25,76 @@ scipy==1.12.0<br>
 ## ディレクトリ構成
 
 ```
-root
-│  .gitignore					Gitで追跡し裏利ないファイル指定
+roo
+│  .DS_Store
+│  .env
+│  .gitattributes
+│  .gitignore
+│  Dockerfile
 │  readme.md
 │  requirements.txt
-│  
-├─flask_app					アプリケーションの本体
+│
+├─flask_app
+│  │  .DS_Store
 │  │  app.py
 │  │  __init__.py
-│  │  
-│  ├─images					画像
-│  │      logo_kari.svg			ロゴ
 │  │
-│  ├─static					CSSやJS
-│  │  └─css
-│  │          index.css			index.htmlのスタイルシート
+│  ├─recognition
+│  │  │  .DS_Store
+│  │  │  recognitionText.py     
 │  │
-│  ├─templates				HTML
-│  │      index.html			「はじめる」画面
+│  ├─static
+│  │  ├─css
+│  │  │      index.css
+│  │  │      responsible.css
+│  │  │
+│  │  ├─images
+│  │  │      logo_kari.svg
+│  │  │
+│  │  └─js
+│  │          cards_arrow.js
+│  │          cards_list.js
+│  │          cards_scroll.js
+│  │          file_preview.js
+│  │          index_animation.js
+│  │          popup.js
+│  │          popup_animation.js
+│  │          upload_filiname.js
 │  │
-│  └─views.py				コントローラ
-│          index.py
+│  ├─templates
+│  │      cards.html
+│  │      edit.html
+│  │      folder.html
+│  │      index.html
+│  │      login.html
+│  │      newcards.html
+│  │      news.html
+│  │
+│  ├─uploads
+│  │      a.jpg
+│  │
+│  ├─views
+│  │  │  cards.py
+│  │  │  edit.py
+│  │  │  folder.py
+│  │  │  index.py
+│  │  │  login.py
+│  │  │  newcards.py
+│  │  │  news.py
+│  │
+│  ├─word2vec
+│  │  │  .DS_Store
+│  │  │  generate_flash_card.py
+│  │  │  load_model_script.py
+│  │  │  model_loader.py
+│  │  │  most_similar_word.py
+│  │  │
+│  │  ├─models
+│  │  │      .DS_Store
+│  │  │      ja_model.pickle
+│  │  │      model.vec   
+│  │
 │
-└─instance					設定
-       config.py
-
+└─instance
+        config.py
 ```
-<!--つづきはまた書きます-->
