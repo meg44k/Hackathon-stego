@@ -207,7 +207,7 @@ input[type="text"] {
 /* FOLDER --------------------------------------------- */
 #folder {
 	background-color: rgb(5, 2, 24);
-	height: 22vh;
+	height: 210px;
 	margin-bottom: 0px;
 }
 
@@ -276,10 +276,29 @@ input[type="text"] {
 	width: 100%;
 	max-width: 1000px;
 	background: #142235;
-	margin: 10% auto;
+	margin: 15% auto;
 	padding: 20px;
 	position: relative;
+	/* 最初は非表示 */
+	display: none;
 }
+
+
+#popup-inside.zoomin.is-animated {
+	animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes zoomIn {
+	0% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+  
 
 #message h2 {
 	font-size: 2rem;
@@ -295,7 +314,7 @@ input[type="text"] {
 
 /* labelをボタンらしく */
 .newcards-button1 {
-	font-size: 1.5rem;
+	font-size: 24px;
 	color: #fff;
 	background-color: #D43260;
 	padding: 20px;
@@ -315,7 +334,7 @@ input[type="text"] {
 }
 
 .newcards-button-text {
-	font-size: 0.5rem;
+	font-size: 50%;
 }
   
 #close {
@@ -343,6 +362,16 @@ input[type="text"] {
 	margin-bottom: 40px;
 	font-size: 1.5rem;
 	min-height: 78vh;
+}
+
+.fileclear {
+	display: none;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.fileclear:hover {
+	color: #D43260;
 }
 
 .newcards-content-filename label {
@@ -397,7 +426,7 @@ input[type="text"] {
 
 /* EDIT --------------------------------------------- */
 .edit-display {
-	min-height: 100vh;
+	min-height: 78vh;
 }
 
 #OKbutton {
@@ -558,6 +587,7 @@ article p {
 
 #buttons button {
 	color: #fff;
+	font-size: 4em;
 }
 
 /* FOOTER --------------------------------------------- */
@@ -571,31 +601,4 @@ footer {
 footer p {
 	color: #fff;
 	font-size: 0.875rem;
-}
-
-
-/* モバイル版 --------------------------------------------- */
-@media (max-width: 600px) {
-	.page-title {
-		font-size: 2.5rem;
-	}
-
-	/* HEADER */
-	.main-nav {
-		font-size: 1rem;
-		margin-top: 10px;
-	}
-	.main-nav li {
-		margin: 0 20px;
-	}
-
-	/* HOME */
-	.home-content {
-		margin-top: 20%;
-	}
-
-	.page-header {
-		flex-direction: column;
-		align-items: center;
-	}
 }

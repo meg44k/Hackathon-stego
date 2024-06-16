@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="flashcards" content="写真から単語帳を自動作成するアプリ．">
 	<title>単語帳を作る魔法　-　Folder</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- ファビコン -->
 	<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
@@ -17,6 +18,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		<!-- これから指定するCSS -->
 		<link rel="stylesheet" href="../static/css/index.css">
+		<link rel="stylesheet" href="../static/css/responsible.css">
 </head>
 
 <body>
@@ -27,7 +29,7 @@
 			<nav>
 				<ul class="main-nav">
 					<li><a href="news.html">News</a></li>
-					<li><a href="login.html">Log in</a></li>
+					<!-- <li><a href="login.html">Log in</a></li> -->
 				</ul>
 			</nav>
 		</header>
@@ -53,7 +55,7 @@
 		 	https://qiita.com/yuaomo/items/55ec1c3ae15ffb272f9c
 		-->
 		<div id="popup-wrapper">
-			<div id="popup-inside">
+			<div id="popup-inside" class="zoomin">
 				<div id="close">
 					戻る
 				</div>
@@ -64,7 +66,7 @@
 							ここに単語帳を作成する
 						</a>
 						<label href="newcards.html" class="newcards-button1">
-							読み取ったデータをCSVとして出力する<br><span class="newcards-button-text">「WordHolic!」等で使うことができます</span><input type="file" accept=".jpg, .jpeg, .png">
+							読み取ったデータをCSVとして出力<br><span class="newcards-button-text">(「WordHolic!」等で使うことができます)</span><input type="file" accept=".jpg, .jpeg, .png">
 						</label>
 					</div>
 				</div>
@@ -82,5 +84,6 @@
 		</div>
 	</footer>
 	<script src="../static/js/popup.js"></script>
+	<script src="../static/js/popup_animation.js"></script>
 </body>
 </html>

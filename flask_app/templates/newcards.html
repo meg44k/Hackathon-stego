@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="flashcards" content="写真から単語帳を自動作成するアプリ．">
 	<title>単語帳を作る魔法　-　Newcards</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- ファビコン -->
 	<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
@@ -17,17 +18,18 @@
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		<!-- これから指定するCSS -->
 		<link rel="stylesheet" href="../static/css/index.css">
-</head>
+		<link rel="stylesheet" href="../static/css/responsible.css">
+	</head>
 
 <body>
-	<div id="folder" class="big-bg">
+	<div id="news" class="big-bg">
 		<!-- ヘッダー部分 -->
 		<header class="page-header wrapper">
 			<h1><a href="index.html"><img class="logo" src="../static/images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
 			<nav>
 				<ul class="main-nav">
-					<li><a href="news.html">News</a></li>
-					<li><a href="login.html">Log in</a></li>
+					<li><a href="folder.html">Folder</a></li>
+					<!-- <li><a href="login.html">Log in</a></li> -->
 				</ul>
 			</nav>
 		</header>
@@ -45,8 +47,11 @@
 				<input type="text" id="folder-name" name="folder-name" placeholder="フォルダ名を入力..." autocomplete="off">
 			</div>
 			<label class="newcards-button2">
-				読み取る写真を選択...<input name="file" type="file" accept=".jpg, .jpeg, .png" class="file-import-direct" id="file-import-choose">
+				読み取る写真を選択...<input name="file" type="file" accept=".jpg, .jpeg, .png, .tiff, .bmp" class="file-import-direct" id="file-import-choose">
 			</label>
+			<div class="fileclear js-upload-fileclear">
+				<u> フォルダ名・ファイル選択をキャンセルする </u>
+			</div>
 			<div>
 				<img id="file-preview">
 			</div>
