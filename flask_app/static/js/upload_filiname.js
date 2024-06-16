@@ -5,7 +5,7 @@ $(function() {
 		$('.js-upload-fileclear').show(); //クリアボタンを表示
 	});
 	$('.js-upload-fileclear').click(function() { //クリアボタンがクリックされたら
-		$('.file-import-direct').val(''); //inputをリセット
+		$('.file-import-direct').val(); //inputをリセット
 		$('.newcards-button2').text('読み取る写真を選択...'); //ファイル名をリセット
 		$(this).hide(); //クリアボタンを非表示
 		$('#file-preview').hide();
