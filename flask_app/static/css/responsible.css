@@ -150,4 +150,14 @@
 	.post-title, .post-cat {
 		margin-left: 80px;
 	}
+
+
+	/* card.html */
+	#buttons {
+		width: 100%;
+	}
+
+	#buttons button {
+		font-size: 2em;
+	}
 }
