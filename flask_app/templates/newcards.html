@@ -41,13 +41,14 @@
 	</div><!-- /#home -->
 
 	<div class="newcards-content wrapper">
-		<form id="folder-name-form"  name = "upload_form" action="{{url_for('newcards.upload')}}" method="POST" enctype="multipart/form-data">
-			<div class="newcards-content-filename">
+		<form action="{{url_for('newcards.newcards')}}" method="POST" enctype="multipart/form-data" >	
+		<div class="newcards-content-filename">
 				<label for="folder-name">フォルダ名</label>
 				<input type="text" id="folder-name" name="folder-name" placeholder="フォルダ名を入力..." autocomplete="off">
 			</div>
 			<label class="newcards-button2">
-				読み取る写真を選択...<input name="file" type="file" accept=".jpg, .jpeg, .png, .tiff, .bmp" class="file-import-direct" id="file-import-choose">
+				＞ 写真を選択 ＜
+			    <input name="file" type="file" accept=".jpg, .jpeg, .png, .tiff, .bmp" class="file-import-direct" id="file-import-choose">
 			</label>
 			<div class="fileclear js-upload-fileclear">
 				<u> フォルダ名・ファイル選択をキャンセルする </u>
@@ -55,11 +56,9 @@
 			<div>
 				<img id="file-preview">
 			</div>
-			<a href="cards.html" onclick="document.upload_form.submit();"class="newcards-button1">
-				生成！
-			</a>
+			<input type="submit" value="生成!" class="newcards-button1">	
 		</form>
-	</div><!-- /.login-content -->
+	</div>
 	
 	<!-- フッター -->
 	<footer>

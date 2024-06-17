@@ -3,20 +3,16 @@ from flask_app.word2vec.generate_flash_card import generate_flash_cards
 import os
 import json
 
-json_path = './uploads/flashcards.json'
-newcards_bp = Blueprint('newcards', __name__, url_prefix='/')
+up_bp = Blueprint('up', __name__, url_prefix='/')
 
 
-@newcards_bp.route('/newcards.html')
-def redirect_to_newcards():
-    return redirect('/newcards')
-
-@newcards_bp.route('/newcards', methods=['GET', 'POST'])
-def newcards():
+@up_bp.route('/up', methods=['GET', 'POST'])
+def up():
     if request.method == 'GET':
-        return render_template('newcards.html')
+        return render_template('up.html')
     elif request.method == 'POST':
         # formからファイルデータを取得
         file = request.files['file']
         file.save(os.path.join('./uploads', file.filename))
-        return redirect('/cards')
+        
+        return render_template('up.html')

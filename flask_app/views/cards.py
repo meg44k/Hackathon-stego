@@ -15,5 +15,5 @@ def cards():
     connected_ja_words = connected_words[1]
     print(connected_en_words)
     print(connected_ja_words)
-    # os.remove('./uploads/*')
+    # os.remove('./uploads/')
     return render_template('cards.html',en_words=connected_en_words,ja_words=connected_ja_words)

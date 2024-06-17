@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="ja">
+<h1>アップロード</h1>
+<form action="{{url_for('up.up')}}" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="アップロード">
+</form>
+</html>
