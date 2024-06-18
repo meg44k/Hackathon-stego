@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="flashcards" content="写真から単語帳を自動作成するアプリ．">
-	<title>単語帳を作る魔法　-　Edit</title>
+	<title>単語帳を作る魔法　-　Log in</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- ファビコン -->
@@ -22,39 +22,46 @@
 	</head>
 
 <body>
-	<div id="news" class="big-bg">
+	<div id="signup" class="big-bg">
 		<!-- ヘッダー部分 -->
 		<header class="page-header wrapper">
 			<h1><a href="index.html"><img class="logo" src="../static/images/logo_kari.svg" alt="単語帳ホーム"></a></h1>
 			<nav>
 				<ul class="main-nav">
-					<li><a href="folder.html">Folder</a></li>
-					<li><a href="login.html">Log in</a></li>
+					<li><a href="news.html">News</a></li>
+					<li><a href="index.html">戻る</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<!-- メインコンテンツ -->
-		<div class="wrapper">
-			<h2 class="page-title">Edit</h2>
-		</div><!-- /.wrapper -->
+		<div class="signup-content wrapper">
+			<h2 class="page-title">SIGN UP</h2>
+			<p>ユーザ名とパスワードを入力してください．</p>
+			<form>
+				<div>
+					<label for="username">メールアドレス</label>
+					<input type="text" id="email" name="email">
+				</div>
+
+				<div>
+					<label for="username">ユーザ名</label>
+					<input type="text" id="username" name="username">
+				</div>
+				
+				<div>
+					<label for="password">パスワード</label>
+					<input type="text" id="password" name="password">
+				</div>
+				
+				<div>
+					<label for="repassword">再入力</label>
+					<input type="text" id="password" name="repassword">
+				</div>
+				
+				<p><input type="checkbox" id="showpassword" onchange="showOrHide()" class="margin">パスワードを表示する</p>
+			</form>
+		</div><!-- /.signin-content -->
 	</div><!-- /#home -->
-
-	<main class="contents-display">
-		<!-- 編集画面入れるところ -->
-
-		<!-- OKボタン（固定） -->
-		<a href="folder.html" class="newcards-button1" id="OKbutton">
-			OK
-		</a>
-	</main>
-
-	<!-- フッター -->
-	<footer>
-		<div class="wrapper">
-			<p><small>&copy; 2024 EYO</small></p>
-		</div>
-	</footer>
-	<script src="../static/js/popup.js"></script>
 </body>
 </html>

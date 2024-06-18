@@ -20,4 +20,4 @@ def newcards():
         # formからファイルデータを取得
         file = request.files['file']
         file.save(os.path.join('./uploads', file.filename))
-        return redirect('/cards')
+        return redirect('/cardss')

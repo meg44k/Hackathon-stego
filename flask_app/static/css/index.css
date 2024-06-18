@@ -121,6 +121,55 @@ input[type="text"] {
 }
 
 
+/* LOG IN --------------------------------------------- */
+.signup-content {
+	text-align: center;
+	margin-top: 5%;
+}
+
+.signup-content p {
+	font-size: 1.125rem;
+	margin: 30px 0 30px;
+}
+
+#signup {
+	background-color: rgb(5, 2, 24);
+	min-height: 100vh;
+}
+
+.signup-content a {
+	color: #fff;
+	transition: 0.2s; /* ホバーをなめらかに */
+}
+
+.signup-content a:hover {
+	color: #D43260;
+}
+
+form div {
+	margin-bottom: 14px;
+}
+
+label {
+	font-size: 1.125rem;
+	display: block;
+}
+
+input {
+	text-align: left;
+	color: #fff;
+}
+
+input[type="text"] {
+	width: 100%;
+	max-width: 240px;
+	border: 1px #fff solid;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 1rem;
+}
+
+
 
 /* HOME --------------------------------------------- */
 /* 文章 */
