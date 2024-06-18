@@ -16,7 +16,8 @@ def newcards():
     if request.method == 'GET':
         return render_template('newcards.html')
     elif request.method == 'POST':
+        folder_name = request.form['folder_name']
         # formからファイルデータを取得
         file = request.files['file']
         file.save(os.path.join('./uploads', file.filename))
-        return redirect('/cards')
+        return redirect('/cards',folder_name=folder_name)
