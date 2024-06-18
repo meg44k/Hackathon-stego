@@ -17,4 +17,3 @@ def signup():
         repassword = request.form['repassword']
         print(email, username, password, repassword)
         return redirect('/index')
-    return render_template('index.html')

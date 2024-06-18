@@ -6,6 +6,12 @@ login_bp = Blueprint('login', __name__, url_prefix='/')
 def redirect_to_login():
     return redirect('/login')
 
-@login_bp.route('/login')
+@login_bp.route('/login',methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    if request.method == 'GET':
+        return render_template('login.html')
+    elif request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        print(email, password,)
+        return redirect('/index')
