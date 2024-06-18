@@ -6,6 +6,15 @@ signup_bp = Blueprint('signup', __name__, url_prefix='/')
 def redirect_to_signup():
     return redirect('/signup')
 
-@signup_bp.route('/signup')
+@signup_bp.route('/signup', methods=['GET', 'POST'])
 def signup():
-    return render_template('signup.html')
+    if request.method == 'GET':
+        return render_template('signup.html')
+    elif request.method == 'POST':
+        email = request.form['email']
+        username = request.form['username']
+        password = request.form['password']
+        repassword = request.form['repassword']
+        print(email, username, password, repassword)
+        return redirect('/index')
+    return render_template('index.html')

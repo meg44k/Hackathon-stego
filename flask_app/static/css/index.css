@@ -382,6 +382,26 @@ input[type="text"] {
 	display: none;
 }
 
+/* labelをボタンらしく */
+.newcards-button-submit {
+	font-size: 24px;
+	color: #fff;
+	background-color: #21a759;
+	padding: 20px;
+	cursor: pointer; /* カーソルを指に */
+	border-radius: 10px; /* 角の丸み */
+	transition: 0.2s; /* ホバーをなめらかに */
+}
+
+/* ホバー時 */
+.newcards-button-submit:hover {
+	background: hwb(139 3% 63%);
+}
+
+/* inputは隠す */
+.newcards-button-submit input {
+	display: none;
+}
 .newcards-button-text {
 	font-size: 50%;
 }
